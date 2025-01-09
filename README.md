@@ -22,7 +22,7 @@ Untuk informasi lebih lanjut, Anda dapat melihat proposal Taskie pada tautan ber
 
 ---
 
-## **Presentasi Video**
+## **Demo Video Peningkatan**
 Untuk mendapatkan gambaran lebih jelas tentang platform kami, silakan tonton video presentasi berikut di YouTube:  
 [**Tonton di YouTube**](https://youtu.be/nOBU8ISoBYg?si=Xus-AfXEfHn9nWZi)
 
