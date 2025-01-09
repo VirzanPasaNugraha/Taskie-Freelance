@@ -128,3 +128,4 @@ export const getEarnings = async (req, res, next) => {
     next(err);
   }
 };
+

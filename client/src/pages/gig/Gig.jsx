@@ -97,7 +97,7 @@ const handleViewProfile = (sellerId) => {
           <div className="seller">
             <h2>Tentang Penjual</h2>
             <div className="user">
-              <img src={dataUser.img || "/img/noavatar.jpg"} alt="Profile" />
+              <img src={dataUser?.img || "/img/noavatar.jpg"} alt="Profile" />
               <div className="info">
                 <span>{dataUser.username}</span>
                 {!isNaN(data.totalStars / data.starNumber) && (
