@@ -1,0 +1,60 @@
+/* Styling untuk wrapper utama */
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f7fb;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling untuk konten pesan */
+  .messageBox {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .messageBox h1 {
+    font-size: 24px;
+    color: #2d6a4f;
+    margin-bottom: 20px;
+  }
+  
+  .messageBox p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .messageBox .loadingText {
+    font-size: 14px;
+    color: #888;
+    margin-top: 15px;
+  }
+  
+  /* Responsif untuk layar kecil */
+  @media (max-width: 600px) {
+    .messageBox {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .messageBox h1 {
+      font-size: 20px;
+    }
+  
+    .messageBox p {
+      font-size: 14px;
+    }
+  
+    .messageBox .loadingText {
+      font-size: 12px;
+    }
+  }
+  

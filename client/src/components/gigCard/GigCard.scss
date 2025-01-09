@@ -1,0 +1,236 @@
+.gigCard {
+  position: relative;
+  border: 1px solid #e1e1e1;
+  border-radius: 18px;
+  background-color: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease-in-out;
+  margin-bottom: 24px;
+  width: 100%;
+  height: auto;  /* Adjusted to allow dynamic content height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #fff;
+  
+  /* Hover effect */
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    opacity: 0.98;
+  }
+}
+
+/* Image container */
+.gigCard-coverContainer {
+  position: relative;
+  width: 100%;
+  height: 180px;  /* Fixed height for consistent aspect ratio */
+  overflow: hidden;
+  display: block;
+}
+
+.gigCard-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the image always covers the container proportionally */
+  object-position: center;  /* Keeps the focus centered for both vertical and horizontal images */
+  transition: transform 0.5s ease, filter 0.4s ease-in-out;
+  filter: brightness(85%);
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.gigCard:hover .gigCard-cover {
+  transform: scale(1.05);  /* Slightly less scaling for smoother effect */
+  filter: brightness(100%);
+}
+
+/* User Info Section */
+.gigCard-user {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px 10px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.gigCard-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.gigCard-user span {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Features Section */
+.gigCard-features {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  z-index: 1;
+}
+
+.gigCard-feature {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.4s ease, transform 0.2s ease-in-out;
+}
+
+.gigCard-feature:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Card Info Section */
+.gigCard-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+  height: 220px;
+  flex-grow: 1;
+}
+
+.gigCard-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+  text-transform: capitalize;
+  line-height: 1.4;
+  transition: color 0.4s ease, transform 0.3s ease;
+}
+
+.gigCard-title:hover {
+  color: #e67e22;
+  transform: translateX(6px);
+}
+
+.gigCard-desc {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 12px;
+  flex-grow: 1;
+  line-height: 1.6;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.gigCard-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .gigCard-star {
+    width: 18px;
+    margin-right: 6px;
+  }
+
+  span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #f1c40f;
+  }
+}
+
+.gigCard-price {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  span {
+    font-size: 13px;
+    color: #999;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e67e22;
+    margin: 0;
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+
+  h2:hover {
+    transform: scale(1.05);
+    color: #d35400;
+  }
+}
+
+/* Mobile-responsive adjustments */
+@media (max-width: 768px) {
+  .gigCard {
+    width: 100%;
+    margin: 16px 0;
+    flex-direction: column;
+  }
+
+  .gigCard-cover {
+    height: 180px;
+  }
+
+  .gigCard-info {
+    padding: 16px;
+  }
+
+  .gigCard-title {
+    font-size: 14px;
+  }
+
+  .gigCard-desc {
+    font-size: 13px;
+    white-space: normal;
+  }
+
+  .gigCard-price h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gigCard-user {
+    bottom: 8px;
+    left: 8px;
+    padding: 6px;
+  }
+
+  .gigCard-feature {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .gigCard-title {
+    font-size: 14px;
+  }
+
+  .gigCard-desc {
+    font-size: 12px;
+  }
+
+  .gigCard-price h2 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,131 @@
+.trustedBy {
+  background: linear-gradient(to bottom, #fdfdfd, #f9f9f9);
+  padding: 40px 15px; /* Mengurangi padding untuk ukuran lebih kecil */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* Rounded corners yang lebih kecil */
+  transition: all 0.3s ease-in-out;
+
+  .container {
+    max-width: 1000px; /* Menyesuaikan lebar kontainer */
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+
+    h1 {
+      font-size: 2.2rem; /* Ukuran font lebih kecil */
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+      position: relative;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 60px; /* Garis bawah lebih kecil */
+        height: 4px;
+        background-color: #00bfa6;
+        margin: 12px auto 0;
+        border-radius: 2px;
+        animation: expand 0.6s ease-out;
+      }
+
+      &:hover {
+        transform: scale(1.05); /* Sedikit lebih besar saat di-hover */
+        color: #00bfa6;
+        cursor: pointer;
+        letter-spacing: 1.5px; /* Lebih longgar saat di-hover */
+      }
+
+      &:active {
+        transform: scale(0.98); /* Sedikit mengecil saat ditekan */
+      }
+    }
+
+    p {
+      font-size: 1.1rem; /* Ukuran teks lebih kecil */
+      color: #555;
+      line-height: 1.6;
+      margin-top: 15px;
+      max-width: 800px; /* Membatasi lebar teks */
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: fadeInText 1s ease-in-out 0.4s forwards;
+      transition: color 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        color: #00bfa6;
+        transform: translateY(-3px); /* Sedikit pergerakan teks saat di-hover */
+      }
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Gradient lebih terang saat hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Bayangan lebih halus saat hover */
+  }
+
+  /* Responsif untuk tablet */
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+
+    .container {
+      padding: 20px;
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* Responsif untuk ponsel */
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+
+    .container {
+      padding: 15px;
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60px; /* Garis bawah lebih pendek */
+  }
+}

@@ -1,0 +1,72 @@
+.slide {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0px;
+
+  .container {
+    width: 1400px;
+    position: relative;
+  }
+
+  .carousel-initialized {
+    position: static;
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .carousel-prev {
+    left: -25px;
+  }
+
+  /* Responsif untuk tablet */
+  @media (max-width: 1024px) {
+    .container {
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* Responsif untuk ponsel */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  /* Responsif untuk ponsel kecil */
+  @media (max-width: 480px) {
+    .container {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

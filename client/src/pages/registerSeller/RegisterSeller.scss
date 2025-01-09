@@ -1,0 +1,284 @@
+/* Main container for the registration page */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e9f7fe, #f3f9fd); /* Background Gradient */
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background 0.4s ease-in-out;
+  position: relative;
+
+  &:hover {
+    background: linear-gradient(135deg, #f3f9fd, #e9f7fe);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* The form container itself */
+  form {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* General Box Shadow */
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid #dcdfe6;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 30px;
+    }
+  }
+
+  /* Left and Right Section Layout */
+  .left,
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .left {
+    padding-right: 35px;
+  }
+
+  /* Header Styles */
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #2c3e50; /* Dark Text Color */
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+
+    .subtext {
+      font-size: 20px;
+      font-weight: 500;
+      color: #3498db; /* Primary Blue Color */
+      margin-top: 8px;
+    }
+  }
+
+  /* Label Styles */
+  label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+    display: block;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #3498db; /* Primary Blue Color */
+    }
+  }
+
+  /* Input and Select Styles */
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='tel'],
+  select,
+  input[type='file'] {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    border: 1px solid #dcdfe6;
+    background-color: #f8f9fb; /* Light Neutral Background Color */
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-color: #3498db; /* Primary Blue Color */
+      background-color: #eef7fd;
+      box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    }
+
+    &::placeholder {
+      color: #bbb;
+      font-size: 16px;
+
+      &:focus {
+        color: #3498db; /* Primary Blue Color */
+        opacity: 0.7;
+      }
+    }
+  }
+
+  input.error {
+    border-color: #e74c3c; /* Red Color for Errors */
+    background-color: #ffe6e6;
+  }
+
+  /* Checkbox Input */
+  input[type='checkbox'] {
+    margin-right: 14px;
+
+    &:checked + .slider {
+      background-color: #2ecc71; /* Green Color */
+    }
+  }
+
+  /* Slider Styles for Checkbox */
+  .slider {
+    position: relative;
+    width: 48px;
+    height: 28px;
+    background-color: #ccc;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+
+    &:before {
+      position: absolute;
+      content: '';
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      left: 4px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    input[type='checkbox']:checked + &:before {
+      transform: translateX(20px);
+    }
+  }
+
+  /* Button Styles */
+  button[type='submit'] {
+    width: 100%;
+    padding: 20px;
+    background-color: #3498db; /* Primary Blue Color */
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 18px;
+
+    &:hover {
+      background-color: #2980b9; /* Hover Darker Blue */
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  /* Error Message Styling */
+  .error {
+    color: #e74c3c; /* Red Color for Errors */
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 16px;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  /* Toast Message Styling */
+  .toast-container {
+    font-size: 14px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+  /* Toggle Section for Terms or Info */
+  .toggle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+
+    label {
+      margin-right: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #555;
+    }
+  }
+
+  /* Focus Ring for Accessibility */
+  input[type='text']:focus,
+  input[type='email']:focus,
+  input[type='password']:focus,
+  input[type='tel']:focus,
+  select:focus,
+  button[type='submit']:focus {
+    outline: 3px solid #3498db; /* Primary Blue Color */
+    outline-offset: 2px;
+  }
+
+  /* Smooth Transition for All Elements */
+  * {
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile-first Adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 36px;
+    }
+
+    button[type='submit'] {
+      font-size: 16px;
+      padding: 18px;
+    }
+
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    input[type='tel'],
+    select {
+      padding: 14px;
+      font-size: 15px;
+    }
+
+    .register {
+      padding: 15px;
+    }
+
+    .left {
+      padding-right: 0;
+    }
+  }
+}

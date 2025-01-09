@@ -1,0 +1,103 @@
+.catCard {
+  width: 260px;  // Lebih lebar untuk memberikan ruang lebih pada desain
+  height: 360px;  // Menambah tinggi agar elemen lebih seimbang
+  color: white;
+  border-radius: 8px;  // Lebih bulat untuk tampilan yang lebih halus
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;  // Menambahkan overflow hidden agar gambar tidak keluar dari kontainer
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  // Transisi lebih halus saat hover
+
+  &:hover {
+    transform: translateY(-8px);  // Efek hover untuk mengangkat kartu
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);  // Membuat bayangan lebih tajam saat hover
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s ease;  // Menambahkan efek zoom pada gambar saat hover
+  }
+
+  &:hover img {
+    transform: scale(1.05);  // Zoom gambar sedikit untuk efek interaktif
+  }
+
+  .desc {
+    font-weight: 300;
+    position: absolute;
+    bottom: 20px;  // Menempatkan deskripsi lebih rendah di dalam kartu
+    left: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);  // Memberikan sedikit transparansi agar tidak mengganggu tampilan utama
+    z-index: 1;
+    transition: color 0.3s ease, bottom 0.3s ease;
+  }
+
+  &:hover .desc {
+    color: rgba(255, 255, 255, 1);  // Meningkatkan kontras deskripsi saat hover
+    bottom: 25px;  // Memberikan ruang ekstra saat hover untuk efek
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;  // Menurunkan sedikit posisi judul agar lebih seimbang dengan desain
+    left: 15px;
+    font-size: 26px;  // Lebih besar agar lebih menonjol
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);  // Menambahkan efek bayangan untuk visibilitas
+    z-index: 2;
+    transition: font-size 0.3s ease, color 0.3s ease;
+  }
+
+  &:hover .title {
+    color: #e67e22;  // Warna berubah saat hover untuk menambah kontras
+    font-size: 28px;  // Menambah ukuran font saat hover agar lebih menonjol
+  }
+
+  /* Responsif untuk ukuran layar tablet */
+  @media (max-width: 1024px) {
+    width: 220px;
+    height: 300px;
+
+    .title {
+      font-size: 22px;
+    }
+
+    .desc {
+      font-size: 12px;
+    }
+  }
+
+  /* Responsif untuk ukuran layar ponsel */
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 260px;
+
+    .title {
+      font-size: 18px;
+    }
+
+    .desc {
+      font-size: 12px;
+    }
+  }
+
+  /* Responsif untuk ukuran layar ponsel kecil */
+  @media (max-width: 480px) {
+    width: 160px;
+    height: 220px;
+
+    .title {
+      font-size: 16px;
+    }
+
+    .desc {
+      font-size: 10px;
+    }
+  }
+}

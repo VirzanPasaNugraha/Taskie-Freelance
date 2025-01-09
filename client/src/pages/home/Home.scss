@@ -1,0 +1,333 @@
+.home {
+  .features {
+    background-color: #f1fdf7;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+
+    &.dark {
+      background-color: #0d084d;
+
+      h1 {
+        color: white !important;
+      }
+
+      i {
+        font-weight: 300;
+      }
+
+      p {
+        margin-bottom: 20px;
+        color: white !important;
+      }
+
+      .title {
+        color: white !important;
+        font-weight: 300 !important;
+        font-size: 14px !important;
+      }
+
+      button {
+        background-color: #1dbf73;
+        border: none;
+        text-align: center;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: max-content;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &:hover {
+          background-color: #17a363;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #4caf50;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover {
+        color: #007bff;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        color: #0056b3;
+        transform: scale(0.95);
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+    }
+
+    .projectCard {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 10px;
+      background-color: #fff;
+    }
+
+    .projectCard img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .projectCard .info {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+    }
+
+    .projectCard .info img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .projectCard .texts {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projectCard .texts h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    .projectCard .texts h2:hover {
+      color: #007bff;
+    }
+
+    .projectCard .texts span {
+      font-size: 14px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    .container {
+      width: 1400px;
+      display: flex;
+      align-items: center;
+      gap: 200px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &:first-child {
+          flex: 2;
+        }
+
+        &:last-child {
+          flex: 3;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        h1 {
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 500;
+          font-size: 18px;
+          color: #666;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          color: gray;
+          line-height: 28px;
+          letter-spacing: 1px;
+        }
+
+        video {
+          width: 720px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  .explore {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+
+    .container {
+      width: 1400px;
+
+      h1 {
+        color: #555;
+      }
+
+      .items {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .item {
+          width: 250px;
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          transition: all 0.3s ease;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+
+          .line {
+            width: 50px;
+            height: 2px;
+            background-color: lightgray;
+            transition: all 0.3s ease;
+          }
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          
+          span {
+            cursor: pointer;
+            color: inherit;
+          }
+
+          &:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+            .line {
+              width: 80px;
+              background-color: #1dbf73;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Tablet responsive */
+  @media (max-width: 768px) {
+    .features .container {
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .explore .container .items .item {
+      width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .explore .container {
+      width: 100%;
+    }
+
+    .projectCard {
+      width: 100%;
+    }
+
+    .container {
+      gap: 50px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 480px) {
+    .features {
+      padding: 50px 20px;
+
+      .container {
+        width: 100%;
+        gap: 20px;
+
+        .item {
+          video {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .explore {
+      padding: 50px 20px;
+
+      .container .items .item {
+        width: 100%;
+      }
+    }
+
+    .container {
+      padding: 15px;
+    }
+
+    .projectCard {
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}

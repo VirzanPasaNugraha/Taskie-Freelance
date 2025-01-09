@@ -1,0 +1,99 @@
+#payment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f7f8fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#payment-form h2 {
+  font-size: 24px;
+  color: #2d6a4f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#link-authentication-element {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#payment-element {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#submit {
+  background-color: #2d6a4f;
+  color: white;
+  font-size: 16px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+#submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#button-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  border: 2px solid transparent;
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+#payment-message {
+  margin-top: 20px;
+  color: #2d6a4f;
+  font-size: 16px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  #payment-form {
+    padding: 15px;
+    width: 90%;
+  }
+
+  #payment-form h2 {
+    font-size: 20px;
+  }
+
+  #submit {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  #payment-message {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,193 @@
+.footer {
+  display: flex;
+  justify-content: center; /* Menjaga footer tetap berada di tengah */
+  color: #666;
+  margin: 50px 0px;
+  flex-wrap: wrap; /* Membolehkan elemen dibungkus pada layar kecil */
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    &:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+
+  .menuLink {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    &:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+
+  .container {
+    width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0 20px; /* Menambahkan padding kiri-kanan untuk ruang lebih */
+    margin: 0 auto; /* Menjaga container tetap terpusat */
+
+    .top {
+      display: flex;
+      justify-content: space-between; /* Menyebar item secara merata */
+      width: 100%;
+      gap: 40px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: 16px;
+          color: #555;
+        }
+
+        span {
+          font-weight: 300;
+        }
+      }
+    }
+
+    hr {
+      margin: 50px 0px;
+      height: 0;
+      border: 1px solid #ebe9e9;
+      width: 100%; /* Membuat garis horizontal lebar penuh */
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 40px;
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        span {
+          font-size: 13px;
+          white-space: nowrap;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .social {
+          display: flex;
+          gap: 20px;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  /* Responsif untuk ukuran layar tablet */
+  @media (max-width: 1024px) {
+    .container {
+      width: 90%; /* Lebar container 90% pada tablet */
+    }
+
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .right {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  }
+
+  /* Responsif untuk ukuran layar ponsel */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .left span {
+      font-size: 12px;
+    }
+
+    .right .social {
+      gap: 15px;
+    }
+
+    .right .link {
+      gap: 8px;
+    }
+  }
+
+  /* Responsif untuk layar ponsel kecil */
+  @media (max-width: 480px) {
+    .container {
+      width: 90%;
+    }
+
+    .top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .left span {
+      font-size: 11px;
+    }
+
+    .right .social {
+      gap: 10px;
+    }
+
+    .right .link {
+      gap: 5px;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.orders {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background-color: #f9fafb;
+  min-height: 100vh;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #333;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+
+      th,
+      td {
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f4f4f4;
+        font-weight: 600;
+        color: #555;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+      }
+
+      tr:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      td {
+        font-size: 0.9rem;
+        color: #555;
+
+        .image {
+          width: 50px;
+          height: 50px;
+          object-fit: cover;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+        }
+
+        img {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+
+  /* Responsivitas */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+
+      .title {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      table {
+        th,
+        td {
+          padding: 0.8rem;
+          font-size: 0.85rem;
+        }
+
+        td {
+          .image {
+            width: 40px;
+            height: 40px;
+          }
+
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      table {
+        display: block;
+
+        thead {
+          display: none;
+        }
+
+        tbody {
+          display: flex;
+          flex-direction: column;
+
+          tr {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+
+            td {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              padding: 0.5rem 0;
+
+              &:first-child {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

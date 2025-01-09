@@ -1,0 +1,250 @@
+.portfolio-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default: one column for each portfolio */
+  gap: 20px;
+  padding: 20px;
+  max-height: 100vh; /* Ensure the container is scrollable */
+  overflow-y: auto; /* Add vertical scrolling */
+  background-color: cornflowerblue; 
+
+  /* Snow effect */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: transparent;
+    z-index: 1;
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: snow 10s linear infinite;
+  }
+
+  /* Snowflake animation */
+  @keyframes snow {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.5;
+    }
+  }
+
+  /* Snowflake styling for different sizes */
+  .snowflake:nth-child(odd) {
+    width: 4px;
+    height: 4px;
+    animation-duration: 8s; /* Faster fall */
+  }
+
+  .snowflake:nth-child(even) {
+    width: 6px;
+    height: 6px;
+    animation-duration: 12s; /* Slower fall */
+  }
+
+  .portfolio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between portfolios */
+
+    /* Styling for the left section */
+    .left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .name {
+        font-size: 40px; /* Larger font size for better visibility */
+        font-weight: 600; /* A medium weight for elegance */
+        color: #333;
+        letter-spacing: 2px; /* Adds space between letters for modern style */
+        text-transform: capitalize; /* Capitalizes only the first letter */
+        position: relative;
+        padding: 10px 20px; /* Add padding inside the name */
+        margin-bottom: 15px;
+        display: inline-block;
+        border-bottom: 2px solid transparent; /* Subtle border at the bottom */
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #1dbf73; /* Change text color on hover */
+          border-bottom: 2px solid #1dbf73; /* Green border on hover for elegance */
+          transform: translateY(-2px); /* Slightly raise the name for an elegant hover effect */
+        }
+      }
+
+      .degree {
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+        position: relative;
+        overflow: hidden; /* Hide the text when not yet typed */
+        white-space: nowrap; /* Keep the text on a single line */
+        width: 0; /* Initially no width */
+        animation: typewriter 2s steps(30) forwards, sparkEffect 1s infinite alternate; /* Apply typewriter and spark effect */
+        border-right: 3px solid #1dbf73; /* Simulate a cursor */
+        padding-right: 10px; /* Padding for spacing from the border */
+
+        @keyframes typewriter {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+
+        @keyframes sparkEffect {
+          0% {
+            text-shadow: 0 0 5px #1dbf73, 0 0 10px #1dbf73, 0 0 15px #1dbf73;
+          }
+          50% {
+            text-shadow: 0 0 10px #f3f3f3, 0 0 20px #f3f3f3, 0 0 30px #1dbf73;
+          }
+          100% {
+            text-shadow: 0 0 5px #1dbf73, 0 0 10px #1dbf73, 0 0 15px #1dbf73;
+          }
+        }
+      }
+
+      .description {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.5;
+        max-width: 800px;
+        text-align: justify;
+        margin-bottom: 20px;
+
+        /* Initial position off-screen to the left */
+        transform: translateX(-50px); /* Start the element off-screen */
+        opacity: 0;
+        animation: slideInFromLeft 1.5s ease-out forwards;
+
+        @keyframes slideInFromLeft {
+          0% {
+            transform: translateX(-50px); /* Start off-screen to the left */
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(0); /* Move to the normal position */
+            opacity: 1;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .download-btn {
+          padding: 10px 20px;
+          font-size: 16px;
+          color: #fff;
+          background-color: #1dbf73;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #17a764;
+          }
+        }
+
+        .social-media {
+          display: flex;
+          gap: 10px;
+
+          a {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* Styling for the right section */
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4), 0px 7px 13px -3px rgba(0, 0, 0, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+        animation: rainbowWave 2s infinite linear; /* Colorful wave effect */
+        border: 5px solid transparent; /* Transparent border to create the wave effect */
+      }
+
+      /* Keyframe for Colorful Wave Animation */
+      @keyframes rainbowWave {
+        0% {
+          box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+        }
+        20% {
+          box-shadow: 0 0 20px #ff7300, 0 0 30px #ff7300, 0 0 40px #ff7300;
+        }
+        40% {
+          box-shadow: 0 0 20px #f7ff00, 0 0 30px #f7ff00, 0 0 40px #f7ff00;
+        }
+        60% {
+          box-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+        }
+        80% {
+          box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff;
+        }
+        100% {
+          box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+        }
+      }
+    }
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablet-sized screens */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr); /* One column on smaller screens */
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+}
