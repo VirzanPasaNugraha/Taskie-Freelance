@@ -36,15 +36,7 @@ const UserProfile = () => {
     : [];
   const totalSales = uniqueGigs.reduce((sum, gig) => sum + (gig.sales || 0), 0);
 
-  // Mengambil data penghasilan Stripe
-  const { data: stripeEarnings = { earnings: 0 } } = useQuery({
-    queryKey: ["stripeEarnings", id],
-    queryFn: () => newRequest.get(`/earnings/${id}`).then((res) => {
-      console.log("Data Penghasilan diterima:", res.data);  // Debugging data penghasilan
-      return res.data;
-    }),
-  });
-
+  
   // Mengambil data percakapan
   const { data: conversations = [] } = useQuery({
     queryKey: ["conversations", id],
@@ -85,7 +77,6 @@ const UserProfile = () => {
             <>
               <p><strong>Pesan Belum Dibaca:</strong> {unreadMessagesForSeller.length}</p>
               <p><strong>Gig yang Dimiliki:</strong> {gigsData.length}</p>
-              <p><strong>Penghasilan:</strong> {new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(stripeEarnings.earnings)}</p>
               <p><strong>Total Penjualan:</strong> {totalSales}</p>
 
               {/* Menampilkan tombol untuk melihat CV dan Sertifikat hanya untuk penjual */}
