@@ -76,6 +76,15 @@ Untuk mendapatkan gambaran lebih jelas tentang platform kami, silakan tonton vid
    cd client
 ---
 
+3. Setelah menginstal dependensi tersebut, code menjalan backend (API):  
+   ```bash
+   yarn start
+---
+4. Setelah menginstal dependensi tersebut, coba jalankan frontend (Client):  
+   ```bash
+   yarn run dev
+---
+
 ## **Hak Cipta**
 © Taskie 2025. Semua hak dilindungi undang-undang.  
 Platform Taskie-Freelance dilindungi oleh hak cipta dan tidak boleh diperjualbelikan atau didistribusikan tanpa izin tertulis dari pemilik hak cipta.
