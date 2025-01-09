@@ -61,7 +61,7 @@ export const getGig = async (req, res, next) => {
 };
 
 // Fungsi untuk mendapatkan semua Gig berdasarkan filter
-
+// Fungsi untuk mendapatkan semua Gig berdasarkan filter
 export const getGigs = async (req, res, next) => {
   const q = req.query;
   const filters = {
@@ -170,6 +170,34 @@ export const getTotalSales = async (req, res) => {
   } catch (err) {
     console.error("Error in aggregation:", err);
     res.status(500).json({ message: "Error fetching total sales" });
+  }
+};
+
+// Fungsi untuk memperbarui penjualan
+export const updateSales = async (req, res) => {
+  const { gigId } = req.body;
+
+  // Mulai transaksi
+  const session = await mongoose.startSession();
+  session.startTransaction();
+
+  try {
+    // Ambil gig dari database dalam transaksi
+    const gig = await Gig.findById(gigId).session(session);
+
+    if (!gig) {
+      throw new Error("Gig not found!");
+    }
+
+    
+
+    res.status(200).json({ message: 'Sales updated', gig });
+  } catch (error) {
+    await session.abortTransaction();  // Gagal, rollback transaksi
+    console.error('Error updating sales:', error.message);
+    res.status(500).json({ message: 'Error updating sales' });
+  } finally {
+    session.endSession();  // Akhiri sesi transaksi
   }
 };
 
